@@ -2,7 +2,7 @@ import { useState } from "react"; // Importing useState hook from React
 import "./TodoList.css"; // Importing the book-style CSS
 
 export default function TodoList() { // Defining the TodoList functional component
-    // State to store the list of todos, initialized with a sample task
+    // State to store the list of todos
     const [todos, setTodos] = useState([]);
     // State to store the value of the new todo input field
     const [newTodo, setNewTodo] = useState("");
@@ -14,6 +14,11 @@ export default function TodoList() { // Defining the TodoList functional compone
             setTodos([...todos, newTodo]); // Add the new todo to the list
             setNewTodo(""); // Clear the input field after adding
         }
+    };
+
+    // Function to delete a todo by its index
+    const deleteTodo = (indexToDelete) => {
+        setTodos(todos.filter((_, index) => index !== indexToDelete));
     };
 
     // Function to update the value of newTodo as the user types
@@ -54,9 +59,12 @@ export default function TodoList() { // Defining the TodoList functional compone
                 ) : (
                     <ul className="todo-list">
                         {todos.map((todo, index) => (
-                            <li key={index} className="todo-item">{todo}</li>
+                            <li key={index} className="todo-item">
+                                <span className="todo-text">{todo}</span>
+                                <button onClick={() => deleteTodo(index)} className="delete-button">Delete</button>
+                            </li>
                         ))}
-                    </ul>
+                    </ul>       
                 )}
             </div>
         </div>

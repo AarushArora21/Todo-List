@@ -168,6 +168,9 @@
     color: #333;
     position: relative;
     font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .todo-item:hover {
@@ -180,6 +183,46 @@
     content: '📝';
     margin-right: 10px;
     font-size: 18px;
+}
+
+.todo-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Delete button styling */
+.delete-button {
+    background: linear-gradient(135deg, #dc143c, #b22222);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Georgia', serif;
+    margin-left: 10px;
+    min-width: 60px;
+}
+
+.delete-button:hover {
+    background: linear-gradient(135deg, #b22222, #dc143c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.delete-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button::before {
+    content: '🗑️';
+    margin-right: 5px;
+    font-size: 12px;
 }
 
 /* Empty state */
