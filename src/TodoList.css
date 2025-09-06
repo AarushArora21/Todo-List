@@ -1,0 +1,238 @@
+/* Book-style Todo List CSS */
+
+.todo-book {
+    max-width: 600px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d3 100%);
+    border-radius: 15px;
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    font-family: 'Georgia', serif;
+    position: relative;
+    border: 3px solid #8b4513;
+}
+
+/* Book binding effect */
+.todo-book::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    bottom: 20px;
+    width: 15px;
+    background: linear-gradient(90deg, #654321, #8b4513, #654321);
+    border-radius: 8px 0 0 8px;
+    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Book pages effect */
+.todo-book::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    bottom: 10px;
+    width: 8px;
+    background: linear-gradient(90deg, #f0f0f0, #e0e0e0);
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Book title */
+.book-title {
+    text-align: center;
+    color: #8b4513;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 2px;
+}
+
+/* Input section styling */
+.input-section {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 2px solid #d4af37;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-input {
+    width: 70%;
+    padding: 12px 15px;
+    border: 2px solid #8b4513;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.task-input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transform: scale(1.02);
+}
+
+.task-input::placeholder {
+    color: #8b4513;
+    font-style: italic;
+}
+
+/* Button styling */
+.book-button {
+    background: linear-gradient(135deg, #8b4513, #a0522d);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Georgia', serif;
+}
+
+.book-button:hover {
+    background: linear-gradient(135deg, #a0522d, #8b4513);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.book-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.clear-button {
+    background: linear-gradient(135deg, #dc143c, #b22222);
+}
+
+.clear-button:hover {
+    background: linear-gradient(135deg, #b22222, #dc143c);
+}
+
+/* Todo list section */
+.todo-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #d4af37;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #8b4513;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-family: 'Times New Roman', serif;
+}
+
+/* Divider line */
+.book-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8b4513, transparent);
+    margin: 15px 0;
+    border-radius: 2px;
+}
+
+/* Todo list styling */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    background: linear-gradient(135deg, #fff8dc, #f5f5dc);
+    margin: 8px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #d4af37;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    font-family: 'Georgia', serif;
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-left-color: #8b4513;
+}
+
+.todo-item::before {
+    content: '📝';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    color: #8b4513;
+    font-style: italic;
+    font-size: 18px;
+    margin: 30px 0;
+    opacity: 0.7;
+}
+
+.empty-state::before {
+    content: '📖';
+    display: block;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .todo-book {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .book-title {
+        font-size: 2em;
+    }
+    
+    .task-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .book-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Animation for new todos */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.todo-item {
+    animation: slideIn 0.3s ease-out;
+}
