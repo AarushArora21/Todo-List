@@ -1,281 +1,660 @@
-/* Book-style Todo List CSS */
+/* ========================================
+   BOOK-STYLE TODO LIST CSS
+   ======================================== */
 
+/* ========================================
+   MAIN CONTAINER - THE BOOK ITSELF
+   ======================================== */
 .todo-book {
+    /* max-width: Limits the book width so it doesn't stretch too wide on large screens */
     max-width: 600px;
+    
+    /* margin: 20px auto - Centers the book horizontally and adds space above/below */
+    /* auto centers horizontally, 20px adds vertical spacing */
     margin: 20px auto;
+    
+    /* background: Creates a gradient from beige to darker beige for aged paper effect */
+    /* linear-gradient(135deg) creates diagonal gradient at 135 degree angle */
+    /* #f5f5dc (beige) to #e8e8d3 (darker beige) simulates old paper */
     background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d3 100%);
+    
+    /* border-radius: Makes corners rounded like a real book */
     border-radius: 15px;
+    
+    /* box-shadow: Creates multiple shadows for 3D book effect */
+    /* First shadow: 0 0 20px - creates soft glow around the book */
+    /* Second shadow: inset - creates inner shadow for depth */
     box-shadow: 
-        0 0 20px rgba(0, 0, 0, 0.3),
-        inset 0 0 20px rgba(255, 255, 255, 0.1);
+        0 0 20px rgba(0, 0, 0, 0.3),        /* Outer glow shadow */
+        inset 0 0 20px rgba(255, 255, 255, 0.1); /* Inner highlight shadow */
+    
+    /* padding: Adds space inside the book for content */
     padding: 30px;
+    
+    /* font-family: Uses serif font for classic book feel */
     font-family: 'Georgia', serif;
+    
+    /* position: relative - Needed for pseudo-elements (::before, ::after) */
     position: relative;
+    
+    /* border: Adds brown border like book cover */
     border: 3px solid #8b4513;
 }
 
-/* Book binding effect */
+/* ========================================
+   BOOK BINDING EFFECT (LEFT SIDE)
+   ======================================== */
 .todo-book::before {
+    /* content: '' - Required for pseudo-element to appear */
     content: '';
+    
+    /* position: absolute - Positions relative to .todo-book */
     position: absolute;
+    
+    /* left: -8px - Places binding slightly outside the book */
     left: -8px;
+    
+    /* top/bottom: 20px - Leaves space at top and bottom */
     top: 20px;
     bottom: 20px;
+    
+    /* width: 15px - Makes binding thin like real book */
     width: 15px;
+    
+    /* background: Creates gradient for realistic binding texture */
+    /* 90deg creates horizontal gradient */
     background: linear-gradient(90deg, #654321, #8b4513, #654321);
+    
+    /* border-radius: Rounds left side only (8px 0 0 8px) */
     border-radius: 8px 0 0 8px;
+    
+    /* box-shadow: inset - Creates inner shadow for depth */
     box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Book pages effect */
+/* ========================================
+   BOOK PAGES EFFECT (RIGHT SIDE)
+   ======================================== */
 .todo-book::after {
+    /* content: '' - Required for pseudo-element */
     content: '';
+    
+    /* position: absolute - Positions relative to .todo-book */
     position: absolute;
+    
+    /* right: -5px - Places pages slightly outside the book */
     right: -5px;
+    
+    /* top/bottom: 10px - Smaller than binding for realistic look */
     top: 10px;
     bottom: 10px;
+    
+    /* width: 8px - Thinner than binding */
     width: 8px;
+    
+    /* background: Light gradient for page edges */
     background: linear-gradient(90deg, #f0f0f0, #e0e0e0);
+    
+    /* border-radius: Rounds right side only */
     border-radius: 0 5px 5px 0;
+    
+    /* box-shadow: Creates subtle shadow */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Book title */
+/* ========================================
+   BOOK TITLE STYLING
+   ======================================== */
 .book-title {
+    /* text-align: center - Centers the title */
     text-align: center;
+    
+    /* color: Brown color matching book theme */
     color: #8b4513;
+    
+    /* font-size: 2.5em - Large size for main title */
+    /* em is relative to parent font size */
     font-size: 2.5em;
+    
+    /* font-weight: bold - Makes title stand out */
     font-weight: bold;
+    
+    /* margin-bottom: Adds space below title */
     margin-bottom: 20px;
+    
+    /* text-shadow: Creates depth with shadow */
+    /* 2px 2px 4px - horizontal, vertical, blur radius */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    /* font-family: Different serif for variety */
     font-family: 'Times New Roman', serif;
+    
+    /* letter-spacing: Spreads letters for elegant look */
     letter-spacing: 2px;
 }
 
-/* Input section styling */
+/* ========================================
+   INPUT SECTION STYLING
+   ======================================== */
 .input-section {
+    /* background: Semi-transparent white for paper effect */
+    /* rgba(255, 255, 255, 0.7) - white with 70% opacity */
     background: rgba(255, 255, 255, 0.7);
+    
+    /* padding: Adds space inside the section */
     padding: 20px;
+    
+    /* border-radius: Rounds corners */
     border-radius: 10px;
+    
+    /* margin-bottom: Adds space below section */
     margin-bottom: 25px;
+    
+    /* border: Golden border for elegance */
     border: 2px solid #d4af37;
+    
+    /* box-shadow: inset - Creates inner shadow for depth */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* ========================================
+   TASK INPUT FIELD STYLING
+   ======================================== */
 .task-input {
+    /* width: 70% - Takes 70% of parent width */
     width: 70%;
+    
+    /* padding: 12px 15px - Vertical and horizontal padding */
     padding: 12px 15px;
+    
+    /* border: Brown border matching theme */
     border: 2px solid #8b4513;
+    
+    /* border-radius: 25px - Makes input pill-shaped */
     border-radius: 25px;
+    
+    /* font-size: 16px - Readable text size */
     font-size: 16px;
+    
+    /* font-family: Matches book theme */
     font-family: 'Georgia', serif;
+    
+    /* background: Semi-transparent white */
     background: rgba(255, 255, 255, 0.9);
+    
+    /* color: Dark text for readability */
     color: #333;
+    
+    /* outline: none - Removes default browser outline */
     outline: none;
+    
+    /* transition: Smooth animation for all properties */
     transition: all 0.3s ease;
 }
 
+/* ========================================
+   INPUT FOCUS STATE (WHEN CLICKED)
+   ======================================== */
 .task-input:focus {
+    /* border-color: Changes to gold when focused */
     border-color: #d4af37;
+    
+    /* box-shadow: Creates glow effect when focused */
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    
+    /* transform: scale(1.02) - Slightly enlarges input */
     transform: scale(1.02);
 }
 
+/* ========================================
+   PLACEHOLDER TEXT STYLING
+   ======================================== */
 .task-input::placeholder {
+    /* color: Brown color for placeholder */
     color: #8b4513;
+    
+    /* font-style: italic - Makes placeholder look different */
     font-style: italic;
 }
 
-/* Button styling */
+/* ========================================
+   BUTTON STYLING
+   ======================================== */
 .book-button {
+    /* background: Gradient from brown to darker brown */
     background: linear-gradient(135deg, #8b4513, #a0522d);
+    
+    /* color: White text for contrast */
     color: white;
+    
+    /* border: none - Removes default border */
     border: none;
+    
+    /* padding: 12px 20px - Vertical and horizontal padding */
     padding: 12px 20px;
+    
+    /* margin: 5px - Space around buttons */
     margin: 5px;
+    
+    /* border-radius: 25px - Makes buttons pill-shaped */
     border-radius: 25px;
+    
+    /* font-size: 14px - Readable button text */
     font-size: 14px;
+    
+    /* font-weight: bold - Makes text stand out */
     font-weight: bold;
+    
+    /* cursor: pointer - Shows hand cursor on hover */
     cursor: pointer;
+    
+    /* transition: Smooth animation for interactions */
     transition: all 0.3s ease;
+    
+    /* box-shadow: Creates depth */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* font-family: Matches book theme */
     font-family: 'Georgia', serif;
 }
 
+/* ========================================
+   BUTTON HOVER STATE
+   ======================================== */
 .book-button:hover {
+    /* background: Reverses gradient on hover */
     background: linear-gradient(135deg, #a0522d, #8b4513);
+    
+    /* transform: translateY(-2px) - Moves button up slightly */
     transform: translateY(-2px);
+    
+    /* box-shadow: Increases shadow for lift effect */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* ========================================
+   BUTTON ACTIVE STATE (WHEN CLICKED)
+   ======================================== */
 .book-button:active {
+    /* transform: translateY(0) - Returns to original position */
     transform: translateY(0);
+    
+    /* box-shadow: Reduces shadow when pressed */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* ========================================
+   CLEAR BUTTON VARIANT
+   ======================================== */
 .clear-button {
+    /* background: Red gradient for danger action */
     background: linear-gradient(135deg, #dc143c, #b22222);
 }
 
 .clear-button:hover {
+    /* background: Reverses red gradient on hover */
     background: linear-gradient(135deg, #b22222, #dc143c);
 }
 
-/* Todo list section */
+/* ========================================
+   TODO LIST SECTION
+   ======================================== */
 .todo-section {
+    /* background: Semi-transparent white for paper effect */
     background: rgba(255, 255, 255, 0.8);
+    
+    /* border-radius: Rounds corners */
     border-radius: 10px;
+    
+    /* padding: Adds space inside section */
     padding: 20px;
+    
+    /* border: Golden border */
     border: 2px solid #d4af37;
+    
+    /* box-shadow: inset - Inner shadow for depth */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* ========================================
+   SECTION TITLE STYLING
+   ======================================== */
 .section-title {
+    /* color: Brown matching theme */
     color: #8b4513;
+    
+    /* font-size: 1.8em - Large but smaller than main title */
     font-size: 1.8em;
+    
+    /* text-align: center - Centers the title */
     text-align: center;
+    
+    /* margin-bottom: Adds space below title */
     margin-bottom: 15px;
+    
+    /* font-weight: bold - Makes it stand out */
     font-weight: bold;
+    
+    /* text-shadow: Subtle shadow for depth */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    
+    /* font-family: Different serif for variety */
     font-family: 'Times New Roman', serif;
 }
 
-/* Divider line */
+/* ========================================
+   DIVIDER LINE STYLING
+   ======================================== */
 .book-divider {
+    /* border: none - Removes default border */
     border: none;
+    
+    /* height: 3px - Makes line thick */
     height: 3px;
+    
+    /* background: Gradient that fades in and out */
+    /* transparent at edges, brown in middle */
     background: linear-gradient(90deg, transparent, #8b4513, transparent);
+    
+    /* margin: Adds space above and below */
     margin: 15px 0;
+    
+    /* border-radius: Rounds the line */
     border-radius: 2px;
 }
 
-/* Todo list styling */
+/* ========================================
+   TODO LIST CONTAINER
+   ======================================== */
 .todo-list {
+    /* list-style: none - Removes bullet points */
     list-style: none;
+    
+    /* padding: 0 - Removes default padding */
     padding: 0;
+    
+    /* margin: 0 - Removes default margin */
     margin: 0;
 }
 
+/* ========================================
+   INDIVIDUAL TODO ITEM STYLING
+   ======================================== */
 .todo-item {
+    /* background: Gradient from light to darker beige */
     background: linear-gradient(135deg, #fff8dc, #f5f5dc);
+    
+    /* margin: 8px 0 - Space between items */
     margin: 8px 0;
+    
+    /* padding: 15px 20px - Space inside each item */
     padding: 15px 20px;
+    
+    /* border-radius: Rounds corners */
     border-radius: 8px;
+    
+    /* border-left: Golden left border for accent */
     border-left: 5px solid #d4af37;
+    
+    /* box-shadow: Creates depth */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* transition: Smooth animation for hover effects */
     transition: all 0.3s ease;
+    
+    /* font-size: 16px - Readable text size */
     font-size: 16px;
+    
+    /* color: Dark text for readability */
     color: #333;
+    
+    /* position: relative - For pseudo-elements */
     position: relative;
+    
+    /* font-family: Matches book theme */
     font-family: 'Georgia', serif;
+    
+    /* display: flex - Enables flexbox layout */
     display: flex;
+    
+    /* justify-content: space-between - Spreads content across width */
     justify-content: space-between;
+    
+    /* align-items: center - Vertically centers content */
     align-items: center;
 }
 
+/* ========================================
+   TODO ITEM HOVER STATE
+   ======================================== */
 .todo-item:hover {
+    /* transform: translateX(5px) - Moves item right on hover */
     transform: translateX(5px);
+    
+    /* box-shadow: Increases shadow on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    
+    /* border-left-color: Changes left border to darker brown */
     border-left-color: #8b4513;
 }
 
+/* ========================================
+   TODO ITEM ICON (PSEUDO-ELEMENT)
+   ======================================== */
 .todo-item::before {
+    /* content: '📝' - Adds memo emoji before text */
     content: '📝';
+    
+    /* margin-right: 10px - Space between icon and text */
     margin-right: 10px;
+    
+    /* font-size: 18px - Slightly larger icon */
     font-size: 18px;
 }
 
+/* ========================================
+   TODO TEXT CONTAINER
+   ======================================== */
 .todo-text {
+    /* flex: 1 - Takes up remaining space */
     flex: 1;
+    
+    /* display: flex - Enables flexbox for icon alignment */
     display: flex;
+    
+    /* align-items: center - Vertically centers text with icon */
     align-items: center;
 }
 
-/* Delete button styling */
+/* ========================================
+   DELETE BUTTON STYLING
+   ======================================== */
 .delete-button {
+    /* background: Red gradient for danger action */
     background: linear-gradient(135deg, #dc143c, #b22222);
+    
+    /* color: White text for contrast */
     color: white;
+    
+    /* border: none - Removes default border */
     border: none;
+    
+    /* padding: 8px 12px - Smaller than main buttons */
     padding: 8px 12px;
+    
+    /* border-radius: 15px - Rounded corners */
     border-radius: 15px;
+    
+    /* font-size: 12px - Smaller text */
     font-size: 12px;
+    
+    /* font-weight: bold - Makes text stand out */
     font-weight: bold;
+    
+    /* cursor: pointer - Shows hand cursor */
     cursor: pointer;
+    
+    /* transition: Smooth animation */
     transition: all 0.3s ease;
+    
+    /* box-shadow: Creates depth */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    /* font-family: Matches theme */
     font-family: 'Georgia', serif;
+    
+    /* margin-left: 10px - Space from text */
     margin-left: 10px;
+    
+    /* min-width: 60px - Ensures consistent button size */
     min-width: 60px;
 }
 
+/* ========================================
+   DELETE BUTTON HOVER STATE
+   ======================================== */
 .delete-button:hover {
+    /* background: Reverses red gradient */
     background: linear-gradient(135deg, #b22222, #dc143c);
+    
+    /* transform: translateY(-1px) - Slight lift effect */
     transform: translateY(-1px);
+    
+    /* box-shadow: Increases shadow */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* ========================================
+   DELETE BUTTON ACTIVE STATE
+   ======================================== */
 .delete-button:active {
+    /* transform: translateY(0) - Returns to original position */
     transform: translateY(0);
+    
+    /* box-shadow: Reduces shadow when pressed */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* ========================================
+   DELETE BUTTON ICON
+   ======================================== */
 .delete-button::before {
+    /* content: '🗑️' - Adds trash can emoji */
     content: '🗑️';
+    
+    /* margin-right: 5px - Space between icon and text */
     margin-right: 5px;
+    
+    /* font-size: 12px - Matches button text size */
     font-size: 12px;
 }
 
-/* Empty state */
+/* ========================================
+   EMPTY STATE (WHEN NO TODOS)
+   ======================================== */
 .empty-state {
+    /* text-align: center - Centers the message */
     text-align: center;
+    
+    /* color: Brown matching theme */
     color: #8b4513;
+    
+    /* font-style: italic - Makes it look like a note */
     font-style: italic;
+    
+    /* font-size: 18px - Readable size */
     font-size: 18px;
+    
+    /* margin: 30px 0 - Adds space above and below */
     margin: 30px 0;
+    
+    /* opacity: 0.7 - Makes it slightly transparent */
     opacity: 0.7;
 }
 
+/* ========================================
+   EMPTY STATE ICON
+   ======================================== */
 .empty-state::before {
+    /* content: '📖' - Adds book emoji */
     content: '📖';
+    
+    /* display: block - Makes it appear on new line */
     display: block;
+    
+    /* font-size: 48px - Large icon */
     font-size: 48px;
+    
+    /* margin-bottom: 10px - Space below icon */
     margin-bottom: 10px;
 }
 
-/* Responsive design */
+/* ========================================
+   RESPONSIVE DESIGN (MOBILE)
+   ======================================== */
 @media (max-width: 768px) {
+    /* @media query - Applies styles only on screens smaller than 768px */
+    
     .todo-book {
+        /* margin: 10px - Reduces margin on mobile */
         margin: 10px;
+        
+        /* padding: 20px - Reduces padding on mobile */
         padding: 20px;
     }
     
     .book-title {
+        /* font-size: 2em - Smaller title on mobile */
         font-size: 2em;
     }
     
     .task-input {
+        /* width: 100% - Full width on mobile */
         width: 100%;
+        
+        /* margin-bottom: 10px - Adds space below input */
         margin-bottom: 10px;
     }
     
     .book-button {
+        /* width: 100% - Full width buttons on mobile */
         width: 100%;
+        
+        /* margin: 5px 0 - Vertical spacing only */
         margin: 5px 0;
     }
 }
 
-/* Animation for new todos */
+/* ========================================
+   ANIMATION KEYFRAMES
+   ======================================== */
 @keyframes slideIn {
+    /* @keyframes - Defines animation sequence */
+    
+    /* from - Starting state */
     from {
+        /* opacity: 0 - Invisible at start */
         opacity: 0;
+        
+        /* transform: translateX(-20px) - Starts 20px to the left */
         transform: translateX(-20px);
     }
+    
+    /* to - Ending state */
     to {
+        /* opacity: 1 - Fully visible at end */
         opacity: 1;
+        
+        /* transform: translateX(0) - Ends at normal position */
         transform: translateX(0);
     }
 }
 
+/* ========================================
+   APPLY ANIMATION TO TODO ITEMS
+   ======================================== */
 .todo-item {
+    /* animation: slideIn 0.3s ease-out - Applies slideIn animation */
+    /* 0.3s duration, ease-out timing function */
     animation: slideIn 0.3s ease-out;
 }
