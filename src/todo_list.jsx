@@ -30,6 +30,10 @@ export default function TodoList() { // Defining the TodoList functional compone
         setTodos([]);
     };
 
+    let upperCaseAll = () => {
+        setTodos(todos.map((todo) => todo.toUpperCase()));
+    }
+
     return (
         <div className="todo-book">
             {/* Book title */}
@@ -66,6 +70,8 @@ export default function TodoList() { // Defining the TodoList functional compone
                         ))}
                     </ul>       
                 )}
+                <br />
+                <button onClick={upperCaseAll}>Uppercase all</button>
             </div>
         </div>
     );
