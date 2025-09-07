@@ -273,6 +273,27 @@
 }
 
 /* ========================================
+   UPPERCASE BUTTON VARIANT
+   ======================================== */
+.uppercase-button {
+    /* Distinct blue gradient for transform action */
+    background: linear-gradient(135deg, #1e90ff, #0b61d8);
+    
+    /* Adds slight letter spacing to hint text change */
+    letter-spacing: 0.5px;
+}
+
+.uppercase-button:hover {
+    background: linear-gradient(135deg, #0b61d8, #1e90ff);
+}
+
+.uppercase-button::before {
+    /* Adds a small icon indicating text transform */
+    content: '⬆️';
+    margin-right: 6px;
+}
+
+/* ========================================
    BUTTON ACTIVE STATE (WHEN CLICKED)
    ======================================== */
 .book-button:active {

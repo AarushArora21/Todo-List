@@ -71,7 +71,7 @@ export default function TodoList() { // Defining the TodoList functional compone
                     </ul>       
                 )}
                 <br />
-                <button onClick={upperCaseAll}>Uppercase all</button>
+                <button onClick={upperCaseAll} className="book-button uppercase-button">Uppercase All</button>
             </div>
         </div>
     );
